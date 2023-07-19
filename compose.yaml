@@ -1,0 +1,13 @@
+version: '2'
+services:
+  backend:
+    image: backend
+    ports:
+     - "3000:3000"
+    working_dir: "/backend"
+    links:
+     - mongodb
+  mongodb:
+    image: mongodb/mongodb-community-server:6.0-ubi8 
+    expose:
+     - 27017
